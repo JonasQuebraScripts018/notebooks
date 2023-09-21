@@ -1,18 +1,18 @@
-$("#enviar").click(cadastrarUsuario);
+$("#btnCadastro").click(cadastrarUsuario);
 
 function cadastrarUsuario(){
     let nome = $("#nome").val();
     let matricula = $("#matricula").val();
     let email = $("#email").val();
-    let cargo = $("#cargo").value;
+    let cargo = $("#cargo")[0].value;
 
     $.ajax({
         type: "POST",
         url: "/cadastro",
         data:{
             nome:nome,
-            matricula:matricula,
             email:email,
+            matricula:matricula,
             cargo:cargo,
         },
         success:function(){
@@ -21,5 +21,5 @@ function cadastrarUsuario(){
         error: function(){
             alert("deu ruim lek");
         }
-    })
+    });
 }
