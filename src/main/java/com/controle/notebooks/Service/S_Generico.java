@@ -25,7 +25,8 @@ public class S_Generico {
         return texto == null || texto.trim().equals("");
     }
 
-        public static String cleanerNumber(String number){
+    public static String cleanerNumber(String number){
             return number.replaceAll("[^0-9]", "");
     }
+
 }

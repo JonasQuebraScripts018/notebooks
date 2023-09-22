@@ -1,0 +1,93 @@
+       html {
+   height: 150%;
+}
+
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#9dd7fc, #243b55);
+}
+
+/*QUADRADO PRINCIPAL*/
+.caixaCadastro {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50, -50);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 20px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+/*PRIMEIRA PARTE, ESTILIZANDO OS INPUT E OS LABELS*/
+.caixaCadastro  h1{
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.caixaCadastro .caixaUsuario {
+  position: relative;
+}
+.caixaCadastro .caixaUsuario input {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.caixaCadastro .caixaUsuario label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.caixaCadastro .caixaUsuario input:focus ~ label,
+.caixaCadastro .caixaUsuario input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+/*Botões*/
+.caixaCadastro .botao1 {
+  position: relative;
+  top: 55px;
+  text-align: center;
+}
+.caixaCadastro .botao1 .bt-cadastro {
+  width: 100px;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #fff;
+  background: #243b55;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.caixaCadastro .botao1 .bt-cadastro:hover {
+  background-color: #9dd7fc;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  transform: translateY(-3px);
+}
