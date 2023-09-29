@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,37 +9,28 @@
     <title>Home</title>
 </head>
 <body>
-<!--    Made by Erik Terwan    -->
-<!--   24th of November 2015   -->
-<!--        MIT License        -->
 <nav role="navigation">
     <div id="menuToggle">
-        <!--
-        A fake / hidden checkbox is used as click reciever,
-        so you can use the :checked selector on it.
-        -->
         <input type="checkbox" />
-
-        <!--
-        Some spans to act as a hamburger.
-
-        They are acting like a real hamburger,
-        not that McDonalds stuff.
-        -->
         <span></span>
         <span></span>
         <span></span>
-
-        <!--
-        Too bad the menu has to be inside of the button
-        but hey, it's pure CSS magic.
-        -->
         <ul id="menu">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>About</li></a>
-            <a href="#"><li>Info</li></a>
-            <a href="#"><li>Contact</li></a>
-            <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+            <h1 th:text="${nome}" style="color: green;"></h1>
+            <div th:if="${usuario.id_cargo == 1}">
+            <a href="/cadastroNote"><li>Cadastro Notes</li></a>
+            <a href="#"><li>Cadastro Pessoas</li></a>
+            <a href="#"><li>Cadastro De Software</li></a>
+            </div>
+            <div th:if="${usuario.id_cargo == 2}">
+                <h1 th:text="${nome}" style="color: green;"></h1>
+                <a href="#"><li>Cadastro Notes</li></a>
+                <a href="#"><li>Cadastro De Software</li></a>
+            </div>
+            <div th:if="${usuario.id_cargo == 3}">
+                <h1 th:text="'Bem Vindo:' + ${usuario.nome}" style="color: green;"></h1>
+                <a href="#"><li>Locação De Notes</li></a>
+            </div>
         </ul>
     </div>
 </nav>
