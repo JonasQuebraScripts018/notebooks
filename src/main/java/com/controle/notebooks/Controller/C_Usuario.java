@@ -39,8 +39,14 @@ public class C_Usuario {
         session.setAttribute("usuario", S_Usuario.verificarLogin(matricula, senha));
         if(S_Usuario.verificarLogin(matricula, senha) == null){
             return false;
-        }else{
+        }else {
             return true;
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.setAttribute("usuario", null);
+        return "redirect:/";
     }
 }

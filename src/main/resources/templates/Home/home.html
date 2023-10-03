@@ -5,31 +5,53 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="CSS/home.css">
     <title>Home</title>
 </head>
 <body>
 <nav role="navigation">
+
     <div id="menuToggle">
-        <input type="checkbox" />
+        <input type="checkbox"/>
         <span></span>
         <span></span>
         <span></span>
         <ul id="menu">
-            <h1 th:text="${nome}" style="color: green;"></h1>
+            <li class="mb-3">
+                <div class="container">
+                    <h1 th:text="'Bem vindo(a): ' + ${usuario.nome}" style="color: green;"></h1>
+                </div>
+            </li>
             <div th:if="${usuario.id_cargo == 1}">
-            <a href="/cadastroNote"><li>Cadastro Notes</li></a>
-            <a href="#"><li>Cadastro Pessoas</li></a>
-            <a href="#"><li>Cadastro De Software</li></a>
+                <a href="/cadastroNote">
+                    <li>Cadastro Notes</li>
+                </a>
+                <a href="usuario/cadastro">
+                    <li>Cadastro Pessoas</li>
+                </a>
+                <a href="software/cadastro">
+                    <li>Cadastro De Software</li>
+                </a>
             </div>
             <div th:if="${usuario.id_cargo == 2}">
                 <h1 th:text="${nome}" style="color: green;"></h1>
-                <a href="#"><li>Cadastro Notes</li></a>
-                <a href="#"><li>Cadastro De Software</li></a>
+                <a href="/cadastroNote">
+                    <li>Cadastro Notes</li>
+                </a>
+                <a href="software/cadastro">
+                    <li>Cadastro De Software</li>
+                </a>
             </div>
             <div th:if="${usuario.id_cargo == 3}">
                 <h1 th:text="'Bem Vindo:' + ${usuario.nome}" style="color: green;"></h1>
-                <a href="#"><li>Locação De Notes</li></a>
+                <a href="#">
+                    <li>Locação De Notes</li>
+                </a>
+            </div>
+            <div class="mt-2">
+            <a type="submit" class="btn btn-danger" href="/logout">Sair</a>
             </div>
         </ul>
     </div>
